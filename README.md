@@ -4,7 +4,7 @@ A small example project on how to use C code in Python to speed up CPU-bound ope
 
 ## The Problem
 
-We want to implement the (prime-counting function)[https://en.wikipedia.org/wiki/Prime-counting_function]. A simple Python implementation is given in `prime_count.py`, which iterates over all numbers and checks if each of them is prime. The complexity of this specific implementation is `O(n*sqrt(n))`. For `n = 1000000`, the program already takes 2.5 seconds. Of course, we can optimize the implementation, but an alternative is to port the "math-heavy" part of the code to a low-level language such as C.
+We want to implement the [prime-counting function](https://en.wikipedia.org/wiki/Prime-counting_function). A simple Python implementation is given in `prime_count.py`, which iterates over all numbers and checks if each of them is prime. The complexity of this specific implementation is `O(n*sqrt(n))`. For `n = 1000000`, the program already takes 2.5 seconds. Of course, we can optimize the implementation, but an alternative is to port the "math-heavy" part of the code to a low-level language such as C.
 
 ## Porting to C
 
@@ -19,7 +19,7 @@ For `n = 1000000`, the code takes 0.3 seconds, almost 10 times faster!
 
 ## Compiling C Code as Shared Library
 
-Our main goal is to dynamically link the C code in Python, which can be done using the `ctypes.cdll.LoadLibrary()` function. To do that, we must compile the C code as a (shared library)[https://en.wikipedia.org/wiki/Shared_library]:
+Our main goal is to dynamically link the C code in Python, which can be done using the `ctypes.cdll.LoadLibrary()` function. To do that, we must compile the C code as a [shared library](https://en.wikipedia.org/wiki/Shared_library):
 
 ```console
 gcc -c -fpic prime_count.c
