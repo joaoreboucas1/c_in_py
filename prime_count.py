@@ -19,13 +19,16 @@ def prime_count(x: float) -> int:
 
 if __name__ == "__main__":
     n = 1_000_000
+
     print("Python:")
     start = perf_counter()
     result = prime_count(n)
     end = perf_counter()
     print(f"Prime count of {n}: {result}")
     print(f"Took {end - start} seconds")
+    
     print("--------------------")
+
     print("C:")
     start = perf_counter()
     result = prime_count_c(n)
